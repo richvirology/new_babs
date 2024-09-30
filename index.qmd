@@ -1,0 +1,39 @@
+---
+title: "Data Analysis in R for BABS 3"
+toc: true
+toc-location: right
+---
+
+# Introduction
+
+This is the third of the four BABS modules. The data analysis part of the course is designed to support your work in the experimental design section, providing you with the tools & knowledge needed to tackle the design and analysis of your own experiments.
+
+## Module Learning Objectives
+
+The module aims for BABS3 that are relevant for the data analysis are;
+
+-   Appropriately select statistical models for count data and non-linear data
+
+-   Use R to perform these analyses, reproducibly, on data in a variety of formats and present the results graphically
+
+# Module Structure
+
+The module consists of three workshops arranged to set you up for the analysis of the data produced by the experiments you perform in the experimental design workshops. There will also be a couple of optional drop-in Q&A sessions towards the end of the semester so that you can solve any issues you have at that stage.
+
+In each two hour workshop, there is a set of exercises to work through. The R scripts you produce in the workshops will make great reference documents for future work, so you should try to include as useful comments to help you understand it in future. Working together in the workshops is a great way to share and gain understanding. It's fine in a workshop to work on the worksheet from a previous workshop, but you should feel free to work on the worksheets in your own time as well.
+
+Before each workshop there is a short video (& slides) that should be watched before the workshop so that you are familiar with the material and can get the most from the workshop. The videos introduce the ideas behind the techniques we use. Understanding these techniques will make them much easier to apply to new problems, so watching the videos is worth your time.
+
+# Content
+
+## [Data organisation, handling and plotting](./workshop_1.qmd)
+
+In this workshop we will go over how to organise your own data to read into R, how to work with awkward data & how to create nice plots.
+
+## Introduction to Generalised Linear Models: Poisson Regression
+
+This workshop will introduce Generalised Linear Models, focussing on Poisson Regression, the GLM suitable for count data.
+
+## Advanced Data Analysis: Bionomial GLMs, Nonlinear Regression & RM Anova
+
+This workshop will have three options, which will be suitable for different data types. Bionomial GLMs, which are suitable for continuous explanatory variables with binary (yes/no) response variables. Nonlinear Regression, suitable for fitting continuous data to known nonlinear functions. Repeated Measures ANOVA, which is a modification of two-way ANOVA for data with repeated samples, such as performing experiments with small sample groups.
