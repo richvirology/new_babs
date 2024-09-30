@@ -1,5 +1,5 @@
 ---
-title: "Workshop"
+title: "Workshop 1"
 subtitle: "Data organisation, handling and plotting"
 toc: true
 toc-location: right
