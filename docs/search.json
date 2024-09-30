@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "babs3.html",
+    "href": "babs3.html",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "",
+    "text": "This is the third of the four BABS modules. The data analysis part of the course is designed to support your work in the experimental design section, providing you with the tools & knowledge needed to tackle the design and analysis of your own experiments.\n\n\nThe module aims for BABS3 that are relevant for the data analysis are;\n\nAppropriately select statistical models for count data and non-linear data\nUse R to perform these analyses, reproducibly, on data in a variety of formats and present the results graphically"
+  },
+  {
+    "objectID": "babs3.html#module-learning-objectives",
+    "href": "babs3.html#module-learning-objectives",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "",
+    "text": "The module aims for BABS3 that are relevant for the data analysis are;\n\nAppropriately select statistical models for count data and non-linear data\nUse R to perform these analyses, reproducibly, on data in a variety of formats and present the results graphically"
+  },
+  {
+    "objectID": "babs3.html#data-organisation-handling-and-plotting",
+    "href": "babs3.html#data-organisation-handling-and-plotting",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Data organisation, handling and plotting",
+    "text": "Data organisation, handling and plotting\nIn this workshop we will go over how to organise your own data to read into R, how to work with awkward data & how to create nice plots."
+  },
+  {
+    "objectID": "babs3.html#introduction-to-generalised-linear-models-poisson-regression",
+    "href": "babs3.html#introduction-to-generalised-linear-models-poisson-regression",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Introduction to Generalised Linear Models: Poisson Regression",
+    "text": "Introduction to Generalised Linear Models: Poisson Regression\nThis workshop will introduce Generalised Linear Models, focussing on Poisson Regression, the GLM suitable for count data."
+  },
+  {
+    "objectID": "babs3.html#advanced-data-analysis-bionomial-glms-nonlinear-regression-rm-anova",
+    "href": "babs3.html#advanced-data-analysis-bionomial-glms-nonlinear-regression-rm-anova",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Advanced Data Analysis: Bionomial GLMs, Nonlinear Regression & RM Anova",
+    "text": "Advanced Data Analysis: Bionomial GLMs, Nonlinear Regression & RM Anova\nThis workshop will have three options, which will be suitable for different data types. Bionomial GLMs, which are suitable for continuous explanatory variables with binary (yes/no) response variables. Nonlinear Regression, suitable for fitting continuous data to known nonlinear functions. Repeated Measures ANOVA, which is a modification of two-way ANOVA for data with repeated samples, such as performing experiments with small sample groups."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "",
+    "text": "This is the third of the four BABS modules. The data analysis part of the course is designed to support your work in the experimental design section, providing you with the tools & knowledge needed to tackle the design and analysis of your own experiments.\n\n\nThe module aims for BABS3 that are relevant for the data analysis are;\n\nAppropriately select statistical models for count data and non-linear data\nUse R to perform these analyses, reproducibly, on data in a variety of formats and present the results graphically"
+  },
+  {
+    "objectID": "index.html#module-learning-objectives",
+    "href": "index.html#module-learning-objectives",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "",
+    "text": "The module aims for BABS3 that are relevant for the data analysis are;\n\nAppropriately select statistical models for count data and non-linear data\nUse R to perform these analyses, reproducibly, on data in a variety of formats and present the results graphically"
+  },
+  {
+    "objectID": "index.html#data-organisation-handling-and-plotting",
+    "href": "index.html#data-organisation-handling-and-plotting",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Data organisation, handling and plotting",
+    "text": "Data organisation, handling and plotting\nIn this workshop we will go over how to organise your own data to read into R, how to work with awkward data & how to create nice plots."
+  },
+  {
+    "objectID": "index.html#introduction-to-generalised-linear-models-poisson-regression",
+    "href": "index.html#introduction-to-generalised-linear-models-poisson-regression",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Introduction to Generalised Linear Models: Poisson Regression",
+    "text": "Introduction to Generalised Linear Models: Poisson Regression\nThis workshop will introduce Generalised Linear Models, focussing on Poisson Regression, the GLM suitable for count data."
+  },
+  {
+    "objectID": "index.html#advanced-data-analysis-bionomial-glms-nonlinear-regression-rm-anova",
+    "href": "index.html#advanced-data-analysis-bionomial-glms-nonlinear-regression-rm-anova",
+    "title": "Data Analysis in R for BABS 3",
+    "section": "Advanced Data Analysis: Bionomial GLMs, Nonlinear Regression & RM Anova",
+    "text": "Advanced Data Analysis: Bionomial GLMs, Nonlinear Regression & RM Anova\nThis workshop will have three options, which will be suitable for different data types. Bionomial GLMs, which are suitable for continuous explanatory variables with binary (yes/no) response variables. Nonlinear Regression, suitable for fitting continuous data to known nonlinear functions. Repeated Measures ANOVA, which is a modification of two-way ANOVA for data with repeated samples, such as performing experiments with small sample groups."
+  },
+  {
+    "objectID": "workshop_1.html",
+    "href": "workshop_1.html",
+    "title": "Workshop",
+    "section": "",
+    "text": "In this session you will remind yourself how to import files, how to handle issues that can come up with irregular data and produce nice figures.\nPrior to this workshop, there are some preparatory materials you can use to get ready on the VLE."
+  },
+  {
+    "objectID": "workshop_1.html#session-overview",
+    "href": "workshop_1.html#session-overview",
+    "title": "Workshop",
+    "section": "",
+    "text": "In this session you will remind yourself how to import files, how to handle issues that can come up with irregular data and produce nice figures.\nPrior to this workshop, there are some preparatory materials you can use to get ready on the VLE."
+  },
+  {
+    "objectID": "workshop_1.html#philosophy",
+    "href": "workshop_1.html#philosophy",
+    "title": "Workshop",
+    "section": "Philosophy",
+    "text": "Philosophy\nWorkshops are not a test. It is expected that you often don’t know how to start, make a lot of mistakes and need help. It is expected that you are familiar with independent study content before the workshop. However, you need not remember or understand every detail as the workshop should build and consolidate your understanding. Tips\n\ndon’t worry about making mistakes\ndon’t let what you can not do interfere with what you can do\ndiscussing code with your neighbours will help\nlook things up in the independent study material\nlook things up in your own code from earlier\nthere are no stupid questions\n\n\n\n\n\n\n\nKey\n\n\n\nThese four symbols are used at the beginning of each instruction so you know where to carry out the instruction.\n Something you need to do on your computer. It may be opening programs or documents or locating a file.\n Something you should do in RStudio. It will often be typing a command or using the menus but might also be creating folders, locating or moving files.\n Something you should do in your browser on the internet. It may be searching for information, going to the VLE or downloading a file.\n A question for you to think about and answer. Record your answers in your script for future reference."
+  },
+  {
+    "objectID": "workshop_1.html#dnase",
+    "href": "workshop_1.html#dnase",
+    "title": "Workshop",
+    "section": "DNase",
+    "text": "DNase\nThe first dataset we will use is ~170 measurements of the Optical Density (OD) of the recombinant protein DNase at known concentrations measured during development of an ELISA array. There are 11 runs of the experiment in the dataset.\n You should download the dataset from here and save it to your working directory. If you are unsure of what/where your working directory is, ask a demonstrator.\n At the start of your script you should add a comment block explaining the experimental data (use lots of # to create space).\nRead the dataset in (remember to script this), then check what it looks like;\n\n# read in the data\ndnase &lt;- read_table(\"dnase.txt\")\n\n\n# examine the whole array\n View(dnase)\n\n Do you notice anything strange about the data?\nIt can be very easy to have slight errors in formatting when creating your own data files. For an error like this, we should trim off the characters, then convert the column type.\n Use mutate and as.numeric to correct the issue with the array.\n\ndnase &lt;- dnase %&gt;% \n  mutate(conc=str_remove(conc,\"um\")) %&gt;% \n  mutate(conc= as.numeric(conc))\n\nWe have used the pipe %&gt;% character to join commands together (the new pipe |&gt; would also work). Review last years’ material if this is unfamiliar. You may also recall from last year that mutate creates new columns. As we have given the same name, this has only replaced the existing column.\nLets make a plot to visualise these results. We have individual measurements, so a scatter plot would probably be most appropriate.\n What are the explanatory and response variables for this dataset?\n Make a scatter plot using ggplot. Use colours to represent the different runs.\n\nggplot(data = dnase,aes(x=conc,y=OD,colour=run))+\n  geom_point()\n\n\n\n\nThe runs have been plotted as a continuous variable, but they are discrete values, so use as.factor in the same style as when we changed the concentration to change run to a factor.\n Create the plot again to see how it’s changed.\n\nggplot(data = dnase,aes(x=conc,y=OD,colour=run))+\n  geom_point()\n\n\n\n\nIn a figure like this, it’s probably not useful to identify each run so we can leave off the legend.\n\nggplot(data = dnase,aes(x=conc,y=OD,colour=run))+\n  geom_point()+\n  theme(legend.position = \"none\")\n\nLater in the course we will learn how to fit a nonlinear curve to this data, but for now we can try linear regression.\n\nggplot(data = dnase,aes(x=conc,y=OD,colour=run))+\n  geom_point()+\n  geom_smooth(method=\"lm\")+\n  theme(legend.position = \"none\")\n\nThis added a linear regression line for each run (as well as the standard error shaded area), which is a bit excessive in this case. This is because the geom_smooth inherited the aesthetic (aes) from the first ggplot command. It might also look better if the line is in the background, which we can adjust by reordering the commands.\n\nggplot(data = dnase,aes(x=conc,y=OD))+\n  geom_smooth(method=\"lm\",color=\"#606060\",se=FALSE)+\n  geom_point(aes(colour=run))+\n  theme(legend.position = \"none\")\n\nThe se=FALSE turns off the standard error region, while the #606060 hex makes the line grey.\nFor your poster, you may want to adjust the size of labels, legend text etc. This can be done within the theme command.\n\nggplot(data = dnase,aes(x=conc,y=OD))+\n  geom_smooth(method=\"lm\",color=\"#606060\",se=FALSE)+\n  geom_point(aes(colour=run))+\n  theme_minimal()+\n  theme(legend.position = \"none\",\n        axis.text = element_text(size=14,family=\"serif\"),\n        axis.title = element_text(family=\"Comic Sans MS\",color=\"lightsalmon2\"),\n        axis.title.x = element_text(size=16,face=\"bold\"),\n        axis.title.y = element_text(size=18,face=\"italic\"))\n\nThis plot looks pretty terrible now, but it shows how much flexibility the theme() command gives you. Note that including theme_minimal before theme() will keep the elements from theme_minimal that we don’t change. Check here for more possibilities. This page might also be useful."
+  },
+  {
+    "objectID": "workshop_1.html#gapminder",
+    "href": "workshop_1.html#gapminder",
+    "title": "Workshop",
+    "section": "Gapminder",
+    "text": "Gapminder\nGapminder is an organisation that provides a large dataset about global trends such as life expectancy.\n Download the datafile and save it to your working directory.\n Read the data in using read_csv into an object called gapdat. Let’s first have a quick look at how life expectancy (lifeExp) has changed globally over the years.\n\ngapdat %&gt;%\n  group_by(year) %&gt;%\n  summarise(lifeExp = median(lifeExp))\n\n How much has the median life expectancy increased in the last 55 years. Is this different from the mean? What does this mean?\n We want to try some insightful data analysis, so lets add a column to the dataset containing the life expectancy in 1977, which is about halfway through the data.\n\ngapdat &lt;- gapdat %&gt;% \n  group_by(country) %&gt;%\n  filter(year==1977) %&gt;% \n  summarise(med_lifeExp_77 = median(lifeExp)) %&gt;% \n  full_join(gapdat)\n\nJoining with `by = join_by(country)`\n\n\nHere group_by groups the data by country, filter extracts only the year 1977, summarise takes the median of this data and full_join sticks this back to the original data frame.\nWe have three possible explanatory variables continent, country and year. There are 142 countries in the dataset, so it would be hard to plot all of those, so let’s include country and year. We can plot both simultaneously by using a facet plot.\n\nggplot(data = gapdat,aes(x=year,y=lifeExp))+\n  geom_boxplot(aes(fill=continent,group=year))+\n  facet_grid(cols=vars(continent))+\n  theme_light()+\n  theme(legend.position = \"none\",\n        axis.text.x = element_text(angle=90,vjust = 0.5))\n\n\n\n\nWe can see from the plot that all continents life expectancy is increasing. Let’s include the results of our analysis by switching to a geom_point. The facet_grid command is set to have the same number of columns (cols) as continents.\n\nggplot(data = gapdat,aes(x=year,y=lifeExp))+\n  geom_point(data = gapdat %&gt;% filter(lifeExp &gt; med_lifeExp_77),aes(x=year,y=lifeExp,colour= continent))+\n  geom_point(data = gapdat %&gt;% filter(lifeExp &lt;= med_lifeExp_77),aes(x=year,y=lifeExp,fill= continent),colour='black',shape=21,stroke=1)+\n  facet_grid(cols=vars(continent))+\n  theme_minimal()+\n  theme(legend.position = \"none\",\n        axis.text.x = element_text(angle=90,vjust = 0.5))\n\n\n\n\nWe can see some countries have life expectancies in 2007 below what they were in 1977, although the method of estimation of life expectancy has likely changed in this time. Using shape=21 is a point with an outline (thickness stroke =1) colour set by colour and the interior set by fill. Note where these occur in the bracket to determine which changes with variables.\n How can we use filter to find these countries?"
+  },
+  {
+    "objectID": "workshop_1.html#nottingham-temperatures",
+    "href": "workshop_1.html#nottingham-temperatures",
+    "title": "Workshop",
+    "section": "Nottingham Temperatures",
+    "text": "Nottingham Temperatures\nThe last data set we will use is a set of monthly average temperatures from Nottingham from the years 1920 to 1939.\n Download the data from here and save it to your working directory.\n Read in the data using the function read_xl from the readxl library. The double colon :: is a way to use a function from a library without loading the library.\n\nnotts &lt;- readxl::read_excel('Nottingham.xlsx')\n\nThe first column is clearly the year, but doesn’t have a column name, so let’s add it.\n\nnames(notts)[1] &lt;- 'year'\n\n If you use View() you can see this file might be hard to plot using ggplot. Why is this?\nWe can refactor the data to be easier to work with by converting it to tidy format.\n\nnotts &lt;- notts %&gt;% pivot_longer(cols = -year,values_to = \"temp\",names_to = \"month\")\n\nHere pivot_longer reorganises the data. cols= -year means take all columns except year, values_to is the column where the values will go, while the former column names will go to month.\nThe data is in Fahrenheit, so we should convert to celsius;\n\nnotts &lt;- notts %&gt;% mutate(temp = 5*(temp-32)/9)\n\n The data is now ready to plot, but first let’s examine the averages. Use group_by and summarise to have a look at the monthly and annual averages.\n First try a line plot using ggplot\n\nggplot(data=notts,aes(x=month,y=temp))+\n  geom_line(aes(colour=year,group=year))\n\n\n\n\nThe months are currently in alphabetical order, so we can use scale_x_discrete to fix this\n\nggplot(data = notts, aes(x=month,y=temp))+\n  geom_line(aes(colour=year,group=year))+\n  scale_x_discrete(limits = c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\n                              \"May\",\"Jun\",\"Jul\",\"Aug\",\n                              \"Sep\",\"Oct\",\"Nov\",\"Dec\"))\n\n Let’s make the plot a bit fancier using what we’ve covered in the workshop.\n\n# add a column for average temperatures\nnotts &lt;- notts %&gt;% \n  group_by(month) %&gt;% \n  summarise(mean_temp = mean(temp)) %&gt;% \n  full_join(notts)\n\n\n# now make the plot\nggplot(data = notts, aes(x=month,y=temp))+\n  geom_line(aes(y=mean_temp,group=year))+\n  geom_boxplot(aes(fill=mean_temp,group=month))+\n  scale_x_discrete(limits = c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\n                              \"May\",\"Jun\",\"Jul\",\"Aug\",\n                              \"Sep\",\"Oct\",\"Nov\",\"Dec\"))+\n  coord_polar()+\n  scale_fill_gradientn(colours = rev(rainbow(5)))+\n  theme_light()+\n  labs(fill = \"Mean\\nTemperature (C)\") + xlab(\"Month\") + ylab(\"Temperature\")\n\n\n\n\nThe coord_polar plot converts this into a radial plot. scale_fill_gradientn creates a colour gradient (for the fill variable) with n colours, rev reverses the direction of this gradient, so that red is the hottest. The labs command can be used to set all labels, while including \\n in the text creates a line break in the label.\nMake sure to be creative with the figures for your posters!"
+  },
+  {
+    "objectID": "workshop_1.html#look-after-future-you",
+    "href": "workshop_1.html#look-after-future-you",
+    "title": "Workshop",
+    "section": "Look after future you!",
+    "text": "Look after future you!\nMake life easier for future you by going back through your code and tidying up.\nYou might need to:\n\ncollect together library statements at the beginning of the code\nedit your comments for clarity and include a paragraph explaining what the analysis is about\nrename variables for consistency or clarity\nremove house keeping or exploratory code or mark it for later removal\nrestyle code, add code section headers etc"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]

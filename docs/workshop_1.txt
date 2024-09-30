@@ -1,0 +1,400 @@
+---
+title: "Workshop"
+subtitle: "Data organisation, handling and plotting"
+toc: true
+toc-location: right
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(kableExtra)
+```
+
+## Session overview
+
+In this session you will remind yourself how to import files, how to handle issues that can come up with irregular data and produce nice figures.
+
+Prior to this workshop, there are some preparatory materials you can use to get ready on [the VLE.](https://vle.york.ac.uk/ultra/courses/_112118_1/outline/edit/document/_5705185_1?courseId=_112118_1&view=content)
+
+## Philosophy
+
+Workshops are not a test. It is expected that you often don't know how to start, make a lot of mistakes and need help. It is expected that you are familiar with independent study content before the workshop. However, you need not remember or understand every detail as the workshop should build and consolidate your understanding. Tips
+
+-   don't worry about making mistakes
+-   don't let what you can not do interfere with what you can do
+-   discussing code with your neighbours will help
+-   look things up in the independent study material
+-   look things up in your own code from earlier
+-   there are no stupid questions
+
+::: callout-note
+## Key
+
+These four symbols are used at the beginning of each instruction so you know where to carry out the instruction.
+
+![](images/do_on_your_computer.png) Something you need to do on your computer. It may be opening programs or documents or locating a file.
+
+![](images/do_in_R.png) Something you should do in RStudio. It will often be typing a command or using the menus but might also be creating folders, locating or moving files.
+
+![](images/do_on_internet.png) Something you should do in your browser on the internet. It may be searching for information, going to the VLE or downloading a file.
+
+![](images/answer.png) A question for you to think about and answer. Record your answers in your script for future reference.
+:::
+
+# Getting started
+
+![](images/do_on_your_computer.png) Start RStudio from the Start menu.
+
+![](images/do_in_R.png) Go the Files tab in the lower right pane and click on the `...` on the right. This will open a "Go to folder" window. Navigate to a place on your computer where you keep your work. Click Open.
+
+![](images/do_in_R.png) Also on the Files tab click on `New Folder`. Type "data-analysis-in-r-3" in to the box. This will be the folder that we work in throughout the Data Analysis in R part BABS2.
+
+![](images/do_in_R.png) Make an RStudio project for this workshop by clicking on the drop-down menu on top right where it says `Project: (None)` and choosing New Project, then New Directory, then New Project. Name the RStudio Project 'week-1'.
+
+![](images/do_in_R.png) Make a new script then save it with a name like analysis.R to carry out the rest of the work.
+
+![](images/do_in_R.png) Load the **`tidyverse`** [@tidyverse] package (Use **`library(tidyverse`**))
+
+![](images/do_in_R.png) Make a new folder called `data-raw`.
+
+# Exercises
+
+## DNase
+
+The first dataset we will use is \~170 measurements of the Optical Density (OD) of the recombinant protein DNase at known concentrations measured during development of an ELISA array. There are 11 runs of the experiment in the dataset.
+
+![](images/do_on_your_computer.png) You should download the dataset from [here](./dnase.txt) and save it to your working directory. If you are unsure of what/where your working directory is, ask a demonstrator.
+
+![](images/do_in_R.png) At the start of your script you should add a comment block explaining the experimental data (use lots of `#` to create space).
+
+Read the dataset in (remember to script this), then check what it looks like;
+
+```{r}
+#| output: false
+# read in the data
+dnase <- read_table("dnase.txt")
+```
+
+```{r}
+#| eval: false
+# examine the whole array
+ View(dnase)
+```
+
+![](images/answer.png) Do you notice anything strange about the data?
+
+```{r}
+#| include: false
+
+#---THINKING ANSWER---
+# In run 2, there are letters in the concentration, meaning that column has been read in as characters.
+```
+
+It can be very easy to have slight errors in formatting when creating your own data files. For an error like this, we should trim off the characters, then convert the column type.
+
+![](images/do_in_R.png) Use `mutate` and `as.numeric` to correct the issue with the array.
+
+```{r}
+dnase <- dnase %>% 
+  mutate(conc=str_remove(conc,"um")) %>% 
+  mutate(conc= as.numeric(conc))
+```
+
+We have used the pipe `%>%` character to join commands together (the new pipe `|>` would also work). Review last years' material if this is unfamiliar. You may also recall from last year that `mutate` creates new columns. As we have given the same name, this has only replaced the existing column.
+
+Lets make a plot to visualise these results. We have individual measurements, so a scatter plot would probably be most appropriate.
+
+![](images/answer.png) What are the explanatory and response variables for this dataset?
+
+```{r}
+#| include: false
+
+#---THINKING ANSWER---
+# The explanatory variables are the concentration and the run number, while the reponse variable is the optical density.  We wouldn't expect a change between the runs, so the explanatory variable to plot is the concentration.  
+```
+
+![](images/do_in_R.png) Make a scatter plot using ggplot. Use colours to represent the different runs.
+
+```{r}
+ggplot(data = dnase,aes(x=conc,y=OD,colour=run))+
+  geom_point()
+
+```
+
+The runs have been plotted as a continuous variable, but they are discrete values, so use `as.factor` in the same style as when we changed the concentration to change `run` to a factor.
+
+```{r}
+#| include: false
+
+dnase <- dnase %>% 
+  mutate(run = as.factor(run))
+```
+
+![](images/do_in_R.png) Create the plot again to see how it's changed.
+
+```{r}
+ggplot(data = dnase,aes(x=conc,y=OD,colour=run))+
+  geom_point()
+```
+
+In a figure like this, it's probably not useful to identify each run so we can leave off the legend.
+
+```{r}
+#| eval: false
+ggplot(data = dnase,aes(x=conc,y=OD,colour=run))+
+  geom_point()+
+  theme(legend.position = "none")
+```
+
+Later in the course we will learn how to fit a nonlinear curve to this data, but for now we can try linear regression.
+
+```{r}
+#| eval: false
+ggplot(data = dnase,aes(x=conc,y=OD,colour=run))+
+  geom_point()+
+  geom_smooth(method="lm")+
+  theme(legend.position = "none")
+```
+
+This added a linear regression line for each run (as well as the standard error shaded area), which is a bit excessive in this case. This is because the `geom_smooth` inherited the aesthetic (`aes`) from the first `ggplot` command. It might also look better if the line is in the background, which we can adjust by reordering the commands.
+
+```{r}
+#| eval: false
+
+ggplot(data = dnase,aes(x=conc,y=OD))+
+  geom_smooth(method="lm",color="#606060",se=FALSE)+
+  geom_point(aes(colour=run))+
+  theme(legend.position = "none")
+```
+
+The `se=FALSE` turns off the standard error region, while the `#606060` hex makes the line grey.
+
+For your poster, you may want to adjust the size of labels, legend text etc. This can be done within the `theme` command.
+
+```{r}
+#| eval: false
+
+ggplot(data = dnase,aes(x=conc,y=OD))+
+  geom_smooth(method="lm",color="#606060",se=FALSE)+
+  geom_point(aes(colour=run))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        axis.text = element_text(size=14,family="serif"),
+        axis.title = element_text(family="Comic Sans MS",color="lightsalmon2"),
+        axis.title.x = element_text(size=16,face="bold"),
+        axis.title.y = element_text(size=18,face="italic"))
+
+```
+
+This plot looks pretty terrible now, but it shows how much flexibility the `theme()` command gives you. Note that including `theme_minimal` before `theme()` will keep the elements from `theme_minimal` that we don't change. Check [here](https://ggplot2.tidyverse.org/reference/theme.html) for more possibilities. [This page](https://ggplot2.tidyverse.org/articles/faq-customising.html) might also be useful.
+
+## Gapminder
+
+Gapminder is an organisation that provides a large dataset about global trends such as life expectancy.
+
+![](images/do_on_your_computer.png) Download the [datafile](./gapminder.csv) and save it to your working directory.
+
+```{r}
+#| include: false
+
+gapdat <- read_csv('gapminder.csv')
+```
+
+![](images/do_in_R.png) Read the data in using `read_csv` into an object called `gapdat`. Let's first have a quick look at how life expectancy (`lifeExp`) has changed globally over the years.
+
+```{r}
+#| output: false
+gapdat %>%
+  group_by(year) %>%
+  summarise(lifeExp = median(lifeExp))
+```
+
+![](images/answer.png) How much has the median life expectancy increased in the last 55 years. Is this different from the mean? What does this mean?
+
+```{r}
+#| include: false
+#---THINKING ANSWER---
+#This suggests that some countries may have greatly increased their life expectancy, but many have not increased their expectancy.  There could also be a change in the number of data points over time. 
+```
+
+![](images/do_in_R.png) We want to try some insightful data analysis, so lets add a column to the dataset containing the life expectancy in 1977, which is about halfway through the data.
+
+```{r}
+gapdat <- gapdat %>% 
+  group_by(country) %>%
+  filter(year==1977) %>% 
+  summarise(med_lifeExp_77 = median(lifeExp)) %>% 
+  full_join(gapdat)
+```
+
+Here `group_by` groups the data by country, `filter` extracts only the year 1977, `summarise` takes the median of this data and `full_join` sticks this back to the original data frame.
+
+We have three possible explanatory variables `continent`, `country` and `year`. There are 142 countries in the dataset, so it would be hard to plot all of those, so let's include `country` and `year`. We can plot both simultaneously by using a `facet` plot.
+
+```{r}
+ggplot(data = gapdat,aes(x=year,y=lifeExp))+
+  geom_boxplot(aes(fill=continent,group=year))+
+  facet_grid(cols=vars(continent))+
+  theme_light()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle=90,vjust = 0.5))
+```
+
+We can see from the plot that all continents life expectancy is increasing. Let's include the results of our analysis by switching to a `geom_point`. The `facet_grid` command is set to have the same number of columns (`cols`) as continents.
+
+```{r}
+ggplot(data = gapdat,aes(x=year,y=lifeExp))+
+  geom_point(data = gapdat %>% filter(lifeExp > med_lifeExp_77),aes(x=year,y=lifeExp,colour= continent))+
+  geom_point(data = gapdat %>% filter(lifeExp <= med_lifeExp_77),aes(x=year,y=lifeExp,fill= continent),colour='black',shape=21,stroke=1)+
+  facet_grid(cols=vars(continent))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle=90,vjust = 0.5))
+```
+
+We can see some countries have life expectancies in 2007 below what they were in 1977, although the method of estimation of life expectancy has likely changed in this time. Using `shape=21` is a point with an outline (thickness `stroke` =1) colour set by `colour` and the interior set by `fill`. Note where these occur in the bracket to determine which changes with variables.
+
+![](images/answer.png) How can we use `filter` to find these countries?
+
+```{r}
+#| include: false
+#---CODING ANSWER---
+gapdat %>% filter(year==2007,lifeExp<med_lifeExp_77)
+```
+
+## Nottingham Temperatures
+
+The last data set we will use is a set of monthly average temperatures from Nottingham from the years 1920 to 1939.
+
+![](images/do_on_your_computer.png) Download the data from [here](./Nottingham.xlsx) and save it to your working directory.
+
+![](images/do_in_R.png) Read in the data using the function `read_xl` from the `readxl` library. The double colon `::` is a way to use a function from a library without loading the library.
+
+```{r}
+#| output: false
+notts <- readxl::read_excel('Nottingham.xlsx')
+```
+
+The first column is clearly the year, but doesn't have a column name, so let's add it.
+
+```{r}
+names(notts)[1] <- 'year'
+```
+
+![](images/answer.png) If you use `View()` you can see this file might be hard to plot using `ggplot`. Why is this?
+
+```{r}
+#| include: false
+#---THINKING ANSWER---
+# The data is not in tidy format.
+```
+
+We can refactor the data to be easier to work with by converting it to tidy format.
+
+```{r}
+notts <- notts %>% pivot_longer(cols = -year,values_to = "temp",names_to = "month")
+```
+
+Here `pivot_longer` reorganises the data. `cols= -year` means take all columns except `year`, `values_to` is the column where the values will go, while the former column names will go to `month`.
+
+The data is in Fahrenheit, so we should convert to celsius;
+
+```{r}
+notts <- notts %>% mutate(temp = 5*(temp-32)/9)
+```
+
+![](images/do_in_R.png) The data is now ready to plot, but first let's examine the averages. Use `group_by` and `summarise` to have a look at the monthly and annual averages.
+
+```{r}
+#| include: false
+#---CODING ANSWER---
+# Monthly average
+notts %>% 
+  group_by(month) %>%
+  summarise(month_temp = mean(temp))
+
+# Annual output
+notts %>% 
+  group_by(year) %>%
+  summarise(yearly_temp = mean(temp))
+```
+
+![](images/do_in_R.png) First try a line plot using ggplot
+
+```{r}
+
+ggplot(data=notts,aes(x=month,y=temp))+
+  geom_line(aes(colour=year,group=year))
+```
+
+The months are currently in alphabetical order, so we can use `scale_x_discrete` to fix this
+
+```{r}
+#| eval: false
+ggplot(data = notts, aes(x=month,y=temp))+
+  geom_line(aes(colour=year,group=year))+
+  scale_x_discrete(limits = c("Jan","Feb","Mar","Apr",
+                              "May","Jun","Jul","Aug",
+                              "Sep","Oct","Nov","Dec"))
+
+```
+
+![](images/do_in_R.png) Let's make the plot a bit fancier using what we've covered in the workshop.
+
+```{r}
+#| output: false
+
+# add a column for average temperatures
+notts <- notts %>% 
+  group_by(month) %>% 
+  summarise(mean_temp = mean(temp)) %>% 
+  full_join(notts)
+
+```
+
+```{r}
+
+# now make the plot
+ggplot(data = notts, aes(x=month,y=temp))+
+  geom_line(aes(y=mean_temp,group=year))+
+  geom_boxplot(aes(fill=mean_temp,group=month))+
+  scale_x_discrete(limits = c("Jan","Feb","Mar","Apr",
+                              "May","Jun","Jul","Aug",
+                              "Sep","Oct","Nov","Dec"))+
+  coord_polar()+
+  scale_fill_gradientn(colours = rev(rainbow(5)))+
+  theme_light()+
+  labs(fill = "Mean\nTemperature (C)") + xlab("Month") + ylab("Temperature")
+
+```
+
+The `coord_polar` plot converts this into a radial plot. `scale_fill_gradientn` creates a colour gradient (for the fill variable) with `n` colours, `rev` reverses the direction of this gradient, so that red is the hottest. The `labs` command can be used to set all labels, while including `\n` in the text creates a line break in the label.
+
+Make sure to be creative with the figures for your posters!
+
+## Look after future you!
+
+Make life easier for future you by going back through your code and tidying up.
+
+You might need to:
+
+-   collect together library statements at the beginning of the code
+-   edit your comments for clarity and include a paragraph explaining what the analysis is about
+-   rename variables for consistency or clarity
+-   remove house keeping or exploratory code or mark it for later removal
+-   restyle code, add code section headers etc
+
+# The Code file
+
+This contains all the code needed in the workshop even where it is not visible on the webpage.
+
+The `workshop_1.qmd` file is the file I use to compile the practical. Qmd stands for Quarto markdown. It allows code and ordinary text to be interweaved to produce well-formatted reports including webpages. [View the Qmd in Browser](./workshop_1.qmd).
+
+Coding and thinking answers are marked with `#---CODING ANSWER---` and `#---THINKING ANSWER---`
+
+Pages made with R [@R-core], Quarto [@allaire2022], `knitr` [@knitr]
+
+# References
