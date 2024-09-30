@@ -49,7 +49,7 @@ These four symbols are used at the beginning of each instruction so you know whe
 
 ![](images/do_on_your_computer.png) Start RStudio from the Start menu.
 
-![](images/do_in_R.png) Go the Files tab in the lower right pane and click on the `...` on the right. This will open a "Go to folder" window. Navigate to a place on your computer where you keep your work. Click Open.
+![](images/do_in_R.png) Go the Files tab in the lower right pane and click on the `...` on the right. This will open a "Go to folder" window. Navigate to a place on your computer where you keep your work.  On the university computers, you should use the H drive. Click Open.
 
 ![](images/do_in_R.png) Also on the Files tab click on `New Folder`. Type "data-analysis-in-r-3" in to the box. This will be the folder that we work in throughout the Data Analysis in R part BABS2.
 
@@ -67,7 +67,7 @@ These four symbols are used at the beginning of each instruction so you know whe
 
 The first dataset we will use is \~170 measurements of the Optical Density (OD) of the recombinant protein DNase at known concentrations measured during development of an ELISA array. There are 11 runs of the experiment in the dataset.
 
-![](images/do_on_your_computer.png) You should download the dataset from [here](./dnase.txt) and save it to your working directory. If you are unsure of what/where your working directory is, ask a demonstrator.
+![](images/do_on_your_computer.png) You should download the dataset from [here](./dnase.txt) and save it to the `data-raw` directory inside your working directory. If you are unsure of what/where your working directory is, ask a demonstrator.
 
 ![](images/do_in_R.png) At the start of your script you should add a comment block explaining the experimental data (use lots of `#` to create space).
 
@@ -76,7 +76,7 @@ Read the dataset in (remember to script this), then check what it looks like;
 ```{r}
 #| output: false
 # read in the data
-dnase <- read_table("dnase.txt")
+dnase <- read_table("data-raw/dnase.txt")
 ```
 
 ```{r}
@@ -196,12 +196,12 @@ This plot looks pretty terrible now, but it shows how much flexibility the `them
 
 Gapminder is an organisation that provides a large dataset about global trends such as life expectancy.
 
-![](images/do_on_your_computer.png) Download the [datafile](./gapminder.csv) and save it to your working directory.
+![](images/do_on_your_computer.png) Download the [datafile](./gapminder.csv) and save it to your `data-raw` directory.
 
 ```{r}
 #| include: false
 
-gapdat <- read_csv('gapminder.csv')
+gapdat <- read_csv('data-raw/gapminder.csv')
 ```
 
 ![](images/do_in_R.png) Read the data in using `read_csv` into an object called `gapdat`. Let's first have a quick look at how life expectancy (`lifeExp`) has changed globally over the years.
@@ -270,13 +270,13 @@ gapdat %>% filter(year==2007,lifeExp<med_lifeExp_77)
 
 The last data set we will use is a set of monthly average temperatures from Nottingham from the years 1920 to 1939.
 
-![](images/do_on_your_computer.png) Download the data from [here](./Nottingham.xlsx) and save it to your working directory.
+![](images/do_on_your_computer.png) Download the data from [here](./Nottingham.xlsx) and save it to your `data-raw` directory.
 
 ![](images/do_in_R.png) Read in the data using the function `read_xl` from the `readxl` library. The double colon `::` is a way to use a function from a library without loading the library.
 
 ```{r}
 #| output: false
-notts <- readxl::read_excel('Nottingham.xlsx')
+notts <- readxl::read_excel('data-raw/Nottingham.xlsx')
 ```
 
 The first column is clearly the year, but doesn't have a column name, so let's add it.
